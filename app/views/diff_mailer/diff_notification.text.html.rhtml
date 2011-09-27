@@ -1,20 +1,9 @@
-<html>
-<head>
-<style></style>
-</head>
-<body style="font-family: Verdana, sans-serif; font-size: 1em; color:#484848;">
-<div>
-        <b>Project:</b> <%= link_to @project.name, @project_url %><br />
-        <b>Revision:</b> <%= link_to @changeset.revision, @changeset_url %> <br />
-        <b>Author:</b> <%= h(@author) %> <br />
-        <b>Summary:</b> <%= @changeset.short_comments %> <br />
-        <b>Details:</b> <%= @changeset.long_comments %> <br /><br />
-
-        Please take a moment to review this checkin.<br /><br />
-</div>
-<hr />
-<%= format_diff @diff %>
-<span class="footer"><%= Redmine::WikiFormatting.to_html(Setting.text_formatting, Setting.emails_footer) %></span>
-</body>
-</html>
+<p><%= l(:diff_email_body) %></p>
+<ul>
+<li><strong><%= l(:label_project) %></strong>: <%= h(@project.name) %></li>
+<li><strong><%= l(:field_assigned_to) %></strong>: <%= h(@author) %></li>
+<li><strong><%= l(:label_revision) %></strong>: <%= link_to @changeset.revision, @changeset_url %></li>
+</ul>
+<hr>
+<%= textilizable(@changeset.comments) %>
 

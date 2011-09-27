@@ -1,0 +1,8 @@
+<%= l(:diff_email_body) %>
+* <%= l(:label_project)%>: <%= @project.name %>
+* <%= l(:field_assigned_to)%>: <%= @author %>
+* <%= l(:label_revision)%>: <%= @changeset.revision %>
+  <%= @changeset_url %>
+--
+<%= @changeset.comments %>
+

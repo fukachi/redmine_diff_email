@@ -4,23 +4,33 @@ This plugin sends diff emails for each changeset pushed to a repository.
 
 == Description
 
-This project is a fork of {genbit/redmine_diff_email}[https://github.com/genbit/redmine_diff_email]
-by {Sergey Generalov}[https://github.com/genbit] (originally by {Lamar}[https://github.com/Lamar/])
-with modifications made to have a better email format.
+This project is a fork of {kahseng/redmine_diff_email}[https://github.com/kahseng/redmine_diff_email.git]
+by {kahseng}[https://github.com/kahseng] (originally by {Lamar}[https://github.com/Lamar/])
+with the following modifications.
+
+* E-mail headers added.
+* Multi-language support (send e-mail in the language of the committer).
+* Support for multipart e-mail (with text messages).
+* View diff in mail abolished.
+* Abolished by users in custom field settings. By project (by the repository) Sets whether to send email.
+* Changes to send mail to project members authorized repository browser.
 
 == Installation
 
-1. Installing the plugin
-   1. Follow the plugin installation procedure at http://www.redmine.org/wiki/redmine/Plugins.
-      1. For convenience, the latest steps for Redmine 1.0.3 are to go to <tt>$REDMINE_DIR/vendor/plugins</tt>
-      2. <tt>git clone git://github.com/kahseng/redmine_diff_email.git</tt>
-   2. Perform a one-time database migration with the command <tt>rake db:migrate:plugins</tt>.
-   3. Restart your Redmine.
-   4. Set the 'Send diff email' checkbox on your account page to receive mails about commits on your projects.
+* Add following 1 line to "./app/views/projects/settings/_repository.rhtml" in your Redmine.
+/*
+ <%   button_disabled = ! @repository.class.scm_available %>
+ <%=    repository_field_tags(f, @repository)%>
+ <%= call_hook(:view_projects_settings_repository) %>        # <-- Add this line. 
+ <% end %>
+ </div>
+*/
+1. Follow the plugin installation procedure at http://www.redmine.org/wiki/redmine/Plugins.
+2. Perform a one-time database migration with the command <tt>rake db:migrate:plugins</tt>.
+3. Restart your Redmine.
+4. Set the 'Email notifications' checkbox at Repositr setting tab on your project settings page.
 
 == License
-
-Copyright (c) 2010 Kah Seng Tay, Ivan Evtuhovich
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
@@ -42,3 +52,4 @@ HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
 WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
+

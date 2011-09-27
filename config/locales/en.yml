@@ -1,0 +1,3 @@
+en:
+  text_diff_email_setting: Send Email to the members allowed to access to the repository at post-commit.
+  diff_email_body: Changes in the repository has been applied.
