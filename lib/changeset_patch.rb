@@ -11,7 +11,7 @@ module ChangesetPatch
   module InstanceMethods
     def send_diff_emails
       if @repository.is_diff_email?
-        DiffMailer.deliver_diff_notification(self)
+        DiffMailer.deliver_diff_notification(self, @repository.is_diff_email_attached?)
       end
     end
   end
