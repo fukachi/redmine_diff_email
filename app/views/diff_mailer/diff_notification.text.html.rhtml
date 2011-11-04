@@ -5,5 +5,6 @@
 <li><strong><%= l(:label_revision) %></strong>: <%= link_to @changeset.revision, @changeset_url %></li>
 </ul>
 <hr>
-<%= textilizable(@changeset.comments) %>
+<%= textilizable(@changeset, :comments, :only_path => false) %>
+<%= simple_format_without_paragraph(@changed_files) %>
 
