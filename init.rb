@@ -9,7 +9,7 @@ Redmine::Plugin.register :redmine_redmine_diff_email do
   name 'Redmine Diff Email Plugin'
   author 'Kah Seng Tay, Sergey Generalov, Lamar, Ivan Evtuhovich, cou2jpn'
   description 'This is a plugin for Redmine that sends diff emails on commits.'
-  version 'c.1.2.0'
+  version 'c.1.3.0'
 end
 
 Dispatcher.to_prepare do
@@ -17,4 +17,5 @@ Dispatcher.to_prepare do
   Repository.send(:include, RepositoryPatch)
   Redmine::Scm::Adapters::SubversionAdapter.send(:include,SubversionAdapterPatch)
   Redmine::Scm::Adapters::GitAdapter.send(:include,GitAdapterPatch)
+  Redmine::Scm::Adapters::MercurialAdapter.send(:include,MercurialAdapterPatch)
 end
