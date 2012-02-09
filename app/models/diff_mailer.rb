@@ -23,10 +23,10 @@ class DiffMailer < Mailer
       content_type  "multipart/mixed"
       part :content_type => "multipart/alternative" do |p|
         p.part :content_type => "text/plain" do |t|
-          t.body = render(:file => "diff_notification.text.plain.rhtml", :body => body, :layout => 'mailer.text.plain.erb')
+          t.body = render(:file => "diff_notification.text.erb", :body => body, :layout => 'mailer.text.erb')
         end
         p.part :content_type => "text/html" do |h|
-          h.body = render_message("diff_notification.text.html.rhtml", body)
+          h.body = render_message("diff_notification.html.erb", body)
         end
       end
       attachment :content_type => 'text/x-patch', :body => diff.join, :filename => "changeset_r#{changeset.revision}.diff"
