@@ -1,6 +1,7 @@
 class DiffMailer < Mailer
 
   def diff_notification(changeset, is_attached)
+
     changed_files = changeset.repository.changed_files("", changeset.revision)
     diff = changeset.repository.diff("", changeset.revision, nil)
     project = changeset.repository.project
@@ -13,7 +14,7 @@ class DiffMailer < Mailer
     set_language_if_valid changeset.user.language unless changeset.user.nil?
     # Only send to users permitted :browse_repository.
     recipients project.members.collect {|m| m.user}.select {|user| user.allowed_to?(:browse_repository, project)}.collect {|u| u.mail}
-    subject "[#{project.name}: #{l(:label_repository)}] r.#{changeset.format_identifier} #{changeset.short_comments}"
+    subject "[#{project.name}: #{l(:label_repository)}] #{changeset.format_identifier} #{changeset.short_comments}"
     body :project => project,
          :author => author,
          :changeset => changeset,
