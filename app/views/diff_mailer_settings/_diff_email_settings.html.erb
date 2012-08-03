@@ -1,13 +1,13 @@
 <p>
 <%= label_tag('repository_is_diff_email', l(:field_mail_notification)) %>
 <%= check_box(:repository, :is_diff_email,
- :onchange => ('if (this.checked) {$("repository_is_diff_email_attached").checked = true; $("repository_is_diff_email_attached").disabled = false;}
+ :onclick => ('if (this.checked) {$("repository_is_diff_email_attached").checked = true; $("repository_is_diff_email_attached").disabled = false;}
  else {$("repository_is_diff_email_attached").checked = false; $("repository_is_diff_email_attached").disabled = true;}')) %><br />
 <em><%= l(:text_diff_email_setting) %></em>
 </p>
 <p>
 <%= check_box(:repository, :is_diff_email_attached,
- :onchange => ('if ($("repository_is_diff_email").checked = true) {this.disabled = false;} else {this.disabled = true;}')) %><br />
+ :onclick => ('if ($("repository_is_diff_email").checked = true) {this.disabled = false;} else {this.disabled = true;}')) %><br />
 <em><%= l(:text_diff_email_attached) %></em>
 </p>
 
