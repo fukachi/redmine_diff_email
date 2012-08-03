@@ -9,7 +9,7 @@ Redmine::Plugin.register :redmine_redmine_diff_email do
   name 'Redmine Diff Email Plugin'
   author 'Kah Seng Tay, Sergey Generalov, Lamar, Ivan Evtuhovich, cou2jpn'
   description 'This is a plugin for Redmine that sends diff emails on commits.'
-  version '0.1.0'
+  version '0.2.0'
   requires_redmine :version_or_higher => '1.3.0'
 end
 
