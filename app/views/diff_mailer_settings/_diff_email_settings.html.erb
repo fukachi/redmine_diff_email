@@ -3,11 +3,11 @@
 <%= check_box(:repository, :is_diff_email,
  :onclick => ('if (this.checked) {$("repository_is_diff_email_attached").checked = true; $("repository_is_diff_email_attached").disabled = false;}
  else {$("repository_is_diff_email_attached").checked = false; $("repository_is_diff_email_attached").disabled = true;}')) %><br />
-<em><%= l(:text_diff_email_setting) %></em>
+<em class="info"><%= l(:text_diff_email_setting) %></em>
 </p>
 <p>
 <%= check_box(:repository, :is_diff_email_attached,
  :onclick => ('if ($("repository_is_diff_email").checked = true) {this.disabled = false;} else {this.disabled = true;}')) %><br />
-<em><%= l(:text_diff_email_attached) %></em>
+<em class="info"><%= l(:text_diff_email_attached) %></em>
 </p>
 
