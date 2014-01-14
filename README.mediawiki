@@ -1,12 +1,13 @@
-= Redmine Diff Email Plugin
+== Redmine Diff Email Plugin ==
+
+'''Warning! Tests with <tt>redmine-2.3.3</tt> showed that this plugin is outdated.'''
 
 This plugin sends diff emails for each changeset pushed to a repository.
 
-== Description
+=== Description ===
 
-This project is a fork of {kahseng/redmine_diff_email}[https://github.com/kahseng/redmine_diff_email.git]
-by {kahseng}[https://github.com/kahseng] (originally by {Lamar}[https://github.com/Lamar/])
-with the following modifications.
+This project is a fork of [https://github.com/kahseng/redmine_diff_email.git]
+(originally by [https://github.com/Lamar/]) with the following modifications.
 
 * E-mail headers added.
 * Multi-language support (send e-mail in the language of the committer).
@@ -17,9 +18,9 @@ with the following modifications.
 * Add the option of attaching diff file or not.
 * To see a list of changed files on the commit in the body of the email. (Git, Subversion, Mercurial)
 
-== Installation
+=== Installation ===
 
-* Add following 1 line to "./app/views/projects/settings/_repository.rhtml" in your Redmine.
+* Add following 1 line to <code>./app/views/projects/settings/_repository.rhtml</code> in your Redmine.
 ----
  <%   button_disabled = ! @repository.class.scm_available %>
  <%=    repository_field_tags(f, @repository)%>
@@ -27,13 +28,13 @@ with the following modifications.
  <% end %>
  </div>
 ----
-1. Follow the plugin installation procedure at http://www.redmine.org/wiki/redmine/Plugins.
-2. Perform a one-time database migration with the command
+# Follow the plugin installation procedure at http://www.redmine.org/wiki/redmine/Plugins.
+# Perform a one-time database migration with the command
      rake db:migrate:plugins
-3. Restart your Redmine.
-4. Set the 'Email notifications' checkbox at Repositr setting tab on your project settings page.
+# Restart your Redmine.
+# Set the 'Email notifications' checkbox at Repositr setting tab on your project settings page.
 
-== License
+=== License ===
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
