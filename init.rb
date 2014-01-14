@@ -1,5 +1,4 @@
 require 'rubygems'
-require "dispatcher"
 require 'redmine'
 
 # Hooks
@@ -13,7 +12,7 @@ Redmine::Plugin.register :redmine_redmine_diff_email do
   requires_redmine :version_or_higher => '1.3.0'
 end
 
-Dispatcher.to_prepare do
+Rails.configuration.to_prepare do
   Changeset.send(:include, ChangesetPatch)
   Repository.send(:include, RepositoryPatch)
   Redmine::Scm::Adapters::SubversionAdapter.send(:include,SubversionAdapterPatch)
