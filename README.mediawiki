@@ -34,7 +34,7 @@ or (if you have the redmine SCM plugin installed) to
 
   ./plugins/redmine_scm/app/views/repositories/_form.html.erb
 
---- OLD
+ --- OLD
  +++ NEW
  @@ -23,6 +23,7 @@
     <%  button_disabled = ! @repository.class.scm_available %>
@@ -42,7 +42,6 @@ or (if you have the redmine SCM plugin installed) to
   <% end %>
  +<%= call_hook(:view_repository_form) %>
   </div>
-
   <p>
 
 # Follow the plugin installation procedure at http://www.redmine.org/wiki/redmine/Plugins.
