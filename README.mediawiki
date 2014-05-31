@@ -28,13 +28,15 @@ The following modifications were made by cou2jpn:
 
 === Installation ===
 
-Add following line to
+To
 
   ./app/views/repositories/_form.html.erb
 
 or (if you have the redmine SCM plugin installed) to
 
   ./plugins/redmine_scm/app/views/repositories/_form.html.erb
+
+add the following:
 
  --- OLD
  +++ NEW
