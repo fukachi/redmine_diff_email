@@ -1,6 +1,8 @@
-== Redmine Diff Email Plugin ==
-
 '''Warning! Tests with <tt>redmine-2.3.3</tt> showed that this plugin is outdated.'''
+
+'''This is basically unusable right now.'''
+
+== Redmine Diff Email Plugin ==
 
 This plugin sends diff emails for each changeset pushed to a repository.
 
