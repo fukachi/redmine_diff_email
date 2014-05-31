@@ -6,8 +6,14 @@ This plugin sends diff emails for each changeset pushed to a repository.
 
 === Description ===
 
-This project is a fork of [https://github.com/kahseng/redmine_diff_email.git]
-(originally by [https://github.com/Lamar/]) with the following modifications.
+This project is a fork of
+[https://github.com/cou2jpn/redmine_diff_email]
+what itself is a fork of
+[https://github.com/kahseng/redmine_diff_email.git]
+what was originally developed by
+[https://github.com/Lamar/]).
+
+The following modifications were made by cou2jpn:
 
 * E-mail headers added.
 * Multi-language support (send e-mail in the language of the committer).
@@ -20,40 +26,27 @@ This project is a fork of [https://github.com/kahseng/redmine_diff_email.git]
 
 === Installation ===
 
-* Add following 1 line to <code>./app/views/projects/settings/_repository.rhtml</code> in your Redmine.
-----
- <%   button_disabled = ! @repository.class.scm_available %>
- <%=    repository_field_tags(f, @repository)%>
- <%= call_hook(:view_projects_settings_repository) %>        # <-- Add this line. 
- <% end %>
- </div>
-----
+Add following line to
+
+  ./app/views/repositories/_form.html.erb
+
+or (if you have the redmine SCM plugin installed) to
+
+  ./plugins/redmine_scm/app/views/repositories/_form.html.erb
+
+--- OLD
+ +++ NEW
+ @@ -23,6 +23,7 @@
+    <%  button_disabled = ! @repository.class.scm_available %>
+    <%= repository_field_tags(f, @repository) %>
+  <% end %>
+ +<%= call_hook(:view_projects_settings_repository) %>
+  </div>
+
+  <p>
+
 # Follow the plugin installation procedure at http://www.redmine.org/wiki/redmine/Plugins.
 # Perform a one-time database migration with the command
      rake db:migrate:plugins
 # Restart your Redmine.
 # Set the 'Email notifications' checkbox at Repositr setting tab on your project settings page.
-
-=== License ===
-
-Permission is hereby granted, free of charge, to any person
-obtaining a copy of this software and associated documentation
-files (the "Software"), to deal in the Software without
-restriction, including without limitation the rights to use,
-copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the
-Software is furnished to do so, subject to the following
-conditions:
-
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-OTHER DEALINGS IN THE SOFTWARE.
-
