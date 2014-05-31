@@ -40,7 +40,7 @@ or (if you have the redmine SCM plugin installed) to
     <%  button_disabled = ! @repository.class.scm_available %>
     <%= repository_field_tags(f, @repository) %>
   <% end %>
- +<%= call_hook(:view_projects_settings_repository) %>
+ +<%= call_hook(:view_repository_form) %>
   </div>
 
   <p>

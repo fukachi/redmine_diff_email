@@ -2,14 +2,15 @@ require 'rubygems'
 require 'redmine'
 
 # Hooks
-require 'view_projects_settings_repository_hooks'
+require 'hooks'
 
-Redmine::Plugin.register :redmine_redmine_diff_email do
+Redmine::Plugin.register :redmine_diff_email do
   name 'Redmine Diff Email Plugin'
-  author 'Kah Seng Tay, Sergey Generalov, Lamar, Ivan Evtuhovich, cou2jpn'
+  author 'Lukas Pirl (orig. by Kah Seng Tay, Sergey Generalov, Lamar, Ivan Evtuhovich, cou2jpn)'
   description 'This is a plugin for Redmine that sends diff emails on commits.'
-  version '0.2.0'
-  requires_redmine :version_or_higher => '1.3.0'
+  version '0.2.1'
+  url 'https://github.com/lpirl/redmine_commit_email'
+  requires_redmine :version_or_higher => '2.5.1'
 end
 
 Rails.configuration.to_prepare do
