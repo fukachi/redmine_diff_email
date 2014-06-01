@@ -1,6 +1,8 @@
-== Redmine Diff Email Plugin ==
-
 '''Warning! Tests with <tt>redmine-2.3.3</tt> showed that this plugin is outdated.'''
+
+'''This is basically unusable right now.'''
+
+== Redmine Diff Email Plugin ==
 
 This plugin sends diff emails for each changeset pushed to a repository.
 
@@ -26,7 +28,7 @@ The following modifications were made by cou2jpn:
 
 === Installation ===
 
-Add following line to
+To
 
   ./app/views/repositories/_form.html.erb
 
@@ -34,7 +36,9 @@ or (if you have the redmine SCM plugin installed) to
 
   ./plugins/redmine_scm/app/views/repositories/_form.html.erb
 
---- OLD
+add the following:
+
+ --- OLD
  +++ NEW
  @@ -23,6 +23,7 @@
     <%  button_disabled = ! @repository.class.scm_available %>
@@ -42,7 +46,6 @@ or (if you have the redmine SCM plugin installed) to
   <% end %>
  +<%= call_hook(:view_repository_form) %>
   </div>
-
   <p>
 
 # Follow the plugin installation procedure at http://www.redmine.org/wiki/redmine/Plugins.
