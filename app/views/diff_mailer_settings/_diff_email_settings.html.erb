@@ -1,13 +1,34 @@
-<p>
-<%= label_tag('repository_is_diff_email', l(:field_mail_notification)) %>
-<%= check_box(:repository, :is_diff_email,
- :onclick => ('if (this.checked) {$("repository_is_diff_email_attached").checked = true; $("repository_is_diff_email_attached").disabled = false;}
- else {$("repository_is_diff_email_attached").checked = false; $("repository_is_diff_email_attached").disabled = true;}')) %><br />
-<em><%= l(:text_diff_email_setting) %></em>
-</p>
-<p>
-<%= check_box(:repository, :is_diff_email_attached,
- :onclick => ('if ($("repository_is_diff_email").checked = true) {this.disabled = false;} else {this.disabled = true;}')) %><br />
-<em><%= l(:text_diff_email_attached) %></em>
-</p>
+<script type="text/javascript">
 
+  function SecondInpuDependsOnFirstClickHandler(event){
+    if (this.checked) {
+      $("#repository_is_diff_email_attached").removeAttr("disabled");
+    } else {
+      $("#repository_is_diff_email_attached").attr("disabled", "disabled");
+    }
+  }
+
+
+  $(document).ready(function(){
+
+    var firstInput = $('#repository_is_diff_email');
+
+    SecondInpuDependsOnFirstClickHandler.call(firstInput);
+
+    firstInput.on(
+      'click',
+      SecondInpuDependsOnFirstClickHandler
+    );
+
+  });
+</script>
+
+<p>
+  <%= label_tag('repository_is_diff_email', l(:field_mail_notification)) %>
+  <%= check_box(:repository, :is_diff_email) %><br />
+  <em><%= l(:text_diff_email_setting) %></em>
+</p>
+<p>
+  <%= check_box(:repository, :is_diff_email_attached) %><br />
+  <em><%= l(:text_diff_email_attached) %></em>
+</p>
