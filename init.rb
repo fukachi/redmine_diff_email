@@ -14,8 +14,12 @@ Redmine::Plugin.register :redmine_diff_email do
 end
 
 Rails.configuration.to_prepare do
+
   Changeset.send(:include, ChangesetPatch)
+
   Repository.send(:include, RepositoryPatch)
+  Repository.safe_attributes 'is_diff_email', 'is_diff_email_attached'
+
   Redmine::Scm::Adapters::SubversionAdapter.send(:include,SubversionAdapterPatch)
   Redmine::Scm::Adapters::GitAdapter.send(:include,GitAdapterPatch)
   Redmine::Scm::Adapters::MercurialAdapter.send(:include,MercurialAdapterPatch)
