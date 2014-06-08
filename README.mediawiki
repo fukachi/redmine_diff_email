@@ -1,7 +1,3 @@
-'''Warning! Tests with <tt>redmine-2.3.3</tt> showed that this plugin is outdated.'''
-
-'''This is basically unusable right now.'''
-
 == Redmine Diff Email Plugin ==
 
 This plugin sends diff emails for each changeset pushed to a repository.
@@ -27,6 +23,9 @@ The following modifications were made by cou2jpn:
 * To see a list of changed files on the commit in the body of the email. (Git, Subversion, Mercurial)
 
 === Installation ===
+
+This plugin is tested and developed with the current Redmine version (2.5).
+Please drop me a note if you find [in]compatibilities with other versions.
 
 To
 
