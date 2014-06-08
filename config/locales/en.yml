@@ -1,4 +1,4 @@
-en:
-  text_diff_email_setting: Send Email to the members allowed to access to the repository at post-commit.
+en:taa
+  text_diff_email_setting: After a commit, send an email to the members thar are allowed to view changesets.
   text_diff_email_attached: Attach the diff file to commit mail.
-  diff_email_body: Changes in the repository has been applied.
+  diff_email_body: Changes in the Repository applied.

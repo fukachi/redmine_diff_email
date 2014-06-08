@@ -15,6 +15,7 @@ end
 
 Rails.configuration.to_prepare do
 
+  Mailer.send(:include, MailerPatch)
   Changeset.send(:include, ChangesetPatch)
 
   Repository.send(:include, RepositoryPatch)

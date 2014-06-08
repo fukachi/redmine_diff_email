@@ -5,13 +5,13 @@ module ChangesetPatch
     base.send(:include, InstanceMethods)
     base.class_eval do
       unloadable
-      after_create :send_diff_emails
+      after_create :send_notification
     end
   end
   module InstanceMethods
-    def send_diff_emails
+    def send_notification
       if repository.is_diff_email?
-        DiffMailer.deliver_diff_notification(self, repository.is_diff_email_attached?)
+        Mailer.changeset_added(self, repository.is_diff_email_attached?).deliver
       end
     end
   end
