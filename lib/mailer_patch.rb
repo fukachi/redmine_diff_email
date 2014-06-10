@@ -16,8 +16,8 @@ module MailerPatch
       @author_s = author.nil? ? changeset.author.to_s : author.login
 
       redmine_headers 'Project' => @project.identifier,
-                      'committer' => @author_s,
-                      'revision' => changeset.revision
+                      'Committer' => @author_s,
+                      'Revision' => changeset.revision
 
       to = @project.notified_users.select {
         |u| u.allowed_to?(:view_changesets, @project)
@@ -27,7 +27,7 @@ module MailerPatch
       to.delete(author.mail) unless author.nil?
       cc = author.mail unless author.nil?
 
-      Rails.logger.info "mailing changeset  to " + to.to_sentence
+      Rails.logger.info "mailing changeset to " + to.to_sentence
 
       subject = "[#{@project.name}: #{l(:label_repository)}] #{changeset.format_identifier} #{changeset.short_comments}"
 
@@ -43,7 +43,6 @@ module MailerPatch
 
       if !diff.nil? && @is_attached
         attachments["changeset_r#{changeset.revision}.diff"] =  diff.join
-        Rails.logger.info "as attachment"
       end
 
       mail :to => to,
