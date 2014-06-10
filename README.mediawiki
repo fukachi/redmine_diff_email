@@ -47,7 +47,7 @@ add the following:
   </div>
   <p>
 
-# Follow the plugin installation procedure at http://www.redmine.org/wiki/redmine/Plugins.
+# Follow the plugin installation procedure at http://www.redmine.org/projects/redmine/wiki/Plugins#Installing-a-plugin.
 # Perform a one-time database migration with the command
      rake db:migrate:plugins
 # Restart your Redmine.
