@@ -8,7 +8,7 @@ This project is a fork of
 [https://github.com/cou2jpn/redmine_diff_email]
 what itself is a fork of
 [https://github.com/kahseng/redmine_diff_email.git]
-what was originally developed by
+(what was originally developed by
 [https://github.com/Lamar/]).
 
 The following modifications were made by cou2jpn:
