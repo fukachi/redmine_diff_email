@@ -37,7 +37,7 @@ module MailerPatch
       @changed_files = @changeset.repository.changed_files("", @changeset.revision)
       diff = @changeset.repository.diff("", @changeset.revision, nil)
 
-      @changeset_url = url_for(:controller => 'repositories', :action => 'revision', :rev => @changeset.revision, :id => @project)
+      @changeset_url = url_for(:controller => 'repositories', :action => 'revision', :rev => @changeset.revision, :id => @project, :repository_id => changeset.repository)
 
       set_language_if_valid @changeset.user.language unless changeset.user.nil?
 
