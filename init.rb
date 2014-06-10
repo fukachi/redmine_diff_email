@@ -9,7 +9,7 @@ Redmine::Plugin.register :redmine_diff_email do
   author 'Lukas Pirl (orig. by Kah Seng Tay, Sergey Generalov, Lamar, Ivan Evtuhovich, cou2jpn)'
   description 'This is a plugin for Redmine that sends diff emails on commits.'
   version '0.3.0'
-  url 'https://github.com/lpirl/redmine_commit_email'
+  url 'https://github.com/lpirl/redmine_diff_email'
   requires_redmine :version_or_higher => '2.5.1'
 end
 
