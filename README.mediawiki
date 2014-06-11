@@ -1,5 +1,3 @@
-== Redmine Diff Email Plugin ==
-
 This plugin sends diff emails for each changeset pushed to a repository.
 
 === Description ===
@@ -47,8 +45,18 @@ add the following:
   </div>
   <p>
 
-# Follow the plugin installation procedure at http://www.redmine.org/projects/redmine/wiki/Plugins#Installing-a-plugin.
-# Perform a one-time database migration with the command
-     rake db:migrate:plugins
-# Restart your Redmine.
-# Set the 'Email notifications' checkbox at Repositr setting tab on your project settings page.
+Now follow the plugin installation procedure at http://www.redmine.org/projects/redmine/wiki/Plugins#Installing-a-plugin .
+
+=== Configuration ===
+
+SomeProject -> "Settings" Tab -> "Repositories" Tab -> "Edit"
+
+Once commit messages are enabled,
+users fulfilling all of the following criteria will receive commit notifications per mail:
+
+* users that are members of that project
+* users with roles that are allowed to view changesets
+* users that receive notifications for the corresponding project
+
+To check whether you receive notifications for a certain project, check your account settings at the "My account" page
+and make sure that "Email notifications" is set to "all projects" or "selected projects" respectively. 
