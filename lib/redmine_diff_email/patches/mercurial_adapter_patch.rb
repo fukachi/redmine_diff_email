@@ -1,4 +1,4 @@
-require_dependency 'lib/redmine/scm/adapters/mercurial_adapter'
+require_dependency 'redmine/scm/adapters/mercurial_adapter'
 
 module RedmineDiffEmail
   module Patches

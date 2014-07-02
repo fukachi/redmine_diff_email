@@ -1,4 +1,4 @@
-require_dependency 'lib/redmine/scm/adapters/git_adapter'
+require_dependency 'redmine/scm/adapters/git_adapter'
 
 module RedmineDiffEmail
   module Patches
