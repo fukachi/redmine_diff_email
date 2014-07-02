@@ -1,9 +1,5 @@
 # Set up autoload of patches
-def apply_patch(&block)
-  ActionDispatch::Callbacks.to_prepare(&block)
-end
-
-apply_patch do
+Rails.configuration.to_prepare do
   require_dependency 'redmine_diff_email/patches/changeset_patch'
   require_dependency 'redmine_diff_email/patches/mailer_patch'
   require_dependency 'redmine_diff_email/patches/repository_patch'
