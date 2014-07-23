@@ -60,3 +60,9 @@ users fulfilling all of the following criteria will receive commit notifications
 
 To check whether you receive notifications for a certain project, check your account settings at the "My account" page
 and make sure that "Email notifications" is set to "all projects" or "selected projects" respectively. 
+
+=== CI ===
+
+[[File:https://travis-ci.org/lpirl/redmine_diff_email.svg?branch=master]]
+
+Thanks to [[https://github.com/n-rodriguez|n-rodriguez]] for the setup.
