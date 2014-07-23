@@ -1,4 +1,4 @@
-<script type="text/javascript">
+<%= javascript_tag do %>
 
   function SecondInpuDependsOnFirstClickHandler(event){
     if ($(this).is(':checked')) {
@@ -8,7 +8,6 @@
     }
   }
 
-
   $(document).ready(function(){
     var firstInput = $('#repository_is_diff_email');
     SecondInpuDependsOnFirstClickHandler.call(firstInput);
@@ -17,14 +16,16 @@
       SecondInpuDependsOnFirstClickHandler
     );
   });
-</script>
+<% end %>
 
-<p>
+<%= content_tag :p do %>
   <%= label_tag('repository_is_diff_email', l(:field_mail_notification)) %>
-  <%= check_box(:repository, :is_diff_email) %><br />
+  <%= check_box(:repository, :is_diff_email) %>
   <em><%= l(:text_diff_email_setting) %></em>
-</p>
-<p>
-  <%= check_box(:repository, :is_diff_email_attached) %><br />
+<% end %>
+
+<%= content_tag :p do %>
+  <%= content_tag :label, "&nbsp;".html_safe %>
+  <%= check_box(:repository, :is_diff_email_attached) %>
   <em><%= l(:text_diff_email_attached) %></em>
-</p>
+<% end %>
