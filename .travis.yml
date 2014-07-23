@@ -25,7 +25,7 @@ before_install:
   - sudo apt-get update -qq
   - sudo apt-get install -qq libicu-dev
   - cd ../..
-  - ./n-rodriguez/redmine_diff_email/contrib/travis/install_redmine.sh
+  - ./lpirl/redmine_diff_email/contrib/travis/install_redmine.sh
   - cd redmine
   - echo $(pwd)
   - export BUNDLE_GEMFILE=$PWD/Gemfile
