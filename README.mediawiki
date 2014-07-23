@@ -63,6 +63,8 @@ and make sure that "Email notifications" is set to "all projects" or "selected p
 
 === CI ===
 
-[[File:https://travis-ci.org/lpirl/redmine_diff_email.svg?branch=master|link=https://travis-ci.org/lpirl/redmine_diff_email]]
+<a href="https://travis-ci.org/lpirl/redmine_diff_email" target="_blank">
+  <img src="https://travis-ci.org/lpirl/redmine_diff_email.svg?branch=master" alt="build status" />
+</a><br />
 
 Thanks to [[https://github.com/n-rodriguez|n-rodriguez]] for the setup.
