@@ -16,10 +16,10 @@ module RedmineDiffEmail
       module InstanceMethods
 
         def changed_files(path, rev)
-          if scm.respond_to?('changed_files')
+          if scm.respond_to?(:changed_files)
             scm.changed_files(path, rev).join
           else
-            return ""
+            return ''
           end
         end
 

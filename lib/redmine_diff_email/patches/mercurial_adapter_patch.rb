@@ -13,10 +13,10 @@ module RedmineDiffEmail
 
       module InstanceMethods
 
-        def changed_files(path=nil, rev="HEAD")
+        def changed_files(path = nil, rev = 'HEAD')
           path ||= ''
           hg_args = []
-          hg_args << "status" << "--change" << rev
+          hg_args << 'status' << '--change' << rev
           unless path.blank?
             p = scm_iconv(@path_encoding, 'UTF-8', path)
             hg_args << CGI.escape(hgtarget(p))
