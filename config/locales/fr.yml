@@ -1,0 +1,4 @@
+fr:
+  text_diff_email_setting: Après un commit, envoyer un mail à tous les membres du projet autorisés à voir les changements.
+  text_diff_email_attached: Joindre le fichier de différences au mail.
+  diff_email_body: Les changements suivants sont apparus dans le dépôt

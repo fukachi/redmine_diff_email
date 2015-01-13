@@ -13,7 +13,7 @@ module RedmineDiffEmail
 
       module InstanceMethods
 
-        def changed_files(path=nil, rev="HEAD")
+        def changed_files(path = nil, rev = 'HEAD')
           path ||= ''
           cmd = "#{self.class.sq_bin} log -v -q -r #{rev} #{target(path)}"
           cmd << credentials_string

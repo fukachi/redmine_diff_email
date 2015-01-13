@@ -21,9 +21,9 @@ module RedmineDiffEmail
           author = changeset.user unless changeset.user.nil?
           @author_s = author.nil? ? changeset.author.to_s : author.login
 
-          redmine_headers 'Project' => @project.identifier,
+          redmine_headers 'Project'   => @project.identifier,
                           'Committer' => @author_s,
-                          'Revision' => changeset.revision
+                          'Revision'  => changeset.revision
 
           to = @project.notified_users.select {
             |u| u.allowed_to?(:view_changesets, @project)
@@ -43,7 +43,7 @@ module RedmineDiffEmail
           @changed_files = @changeset.repository.changed_files("", @changeset.revision)
           diff = @changeset.repository.diff("", @changeset.revision, nil)
 
-          @changeset_url = url_for(:controller => 'repositories', :action => 'revision', :rev => @changeset.revision, :id => @project, :repository_id => changeset.repository)
+          @changeset_url = url_for(controller: 'repositories', action: 'revision', rev: @changeset.revision, id: @project, repository_id: changeset.repository)
 
           set_language_if_valid @changeset.user.language unless changeset.user.nil?
 
@@ -51,9 +51,9 @@ module RedmineDiffEmail
             attachments["changeset_r#{changeset.revision}.diff"] = diff.join
           end
 
-          mail :to => to,
-               :cc => cc,
-               :subject => subject
+          mail to: to,
+               cc: cc,
+               subject: subject
         end
 
       end
