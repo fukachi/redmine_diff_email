@@ -18,8 +18,8 @@ module RedmineDiffEmail
 
           @project = changeset.repository.project
 
-          author = changeset.user unless changeset.user.nil?
-          @author_s = author.nil? ? changeset.author.to_s : author.login
+          @author = changeset.user unless changeset.user.nil?
+          @author_s = author.nil? ? changeset.author.to_s : @author.login
 
           redmine_headers 'Project'   => @project.identifier,
                           'Committer' => @author_s,
@@ -30,7 +30,7 @@ module RedmineDiffEmail
           }.collect {
             |u| u.mail
           }
-          to.delete(author.mail) unless author.nil?
+          to.delete(@author.mail) unless @author.nil?
 
           Rails.logger.info "mailing changeset to " + to.to_sentence
 
