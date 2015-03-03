@@ -19,7 +19,7 @@ module RedmineDiffEmail
           @project = changeset.repository.project
 
           @author = changeset.user unless changeset.user.nil?
-          @author_s = author.nil? ? changeset.author.to_s : @author.login
+          @author_s = @author.nil? ? changeset.author.to_s : @author.login
 
           redmine_headers 'Project'   => @project.identifier,
                           'Committer' => @author_s,
