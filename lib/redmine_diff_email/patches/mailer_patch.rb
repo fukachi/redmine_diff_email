@@ -30,7 +30,6 @@ module RedmineDiffEmail
           }.collect {
             |u| u.mail
           }
-          to.delete(@author.mail) unless @author.nil?
 
           Rails.logger.info "mailing changeset to " + to.to_sentence
 
