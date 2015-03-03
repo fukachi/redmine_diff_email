@@ -10,7 +10,7 @@ namespace :redmine_diff_email do
   task :test => :default
   task :default do
     RSpec::Core::RakeTask.new(:spec) do |config|
-      config.rspec_opts = "plugins/redmine_diff_email/spec --color --format nested --fail-fast"
+      config.rspec_opts = "plugins/redmine_diff_email/spec --color --format documentation --fail-fast"
     end
     Rake::Task["spec"].invoke
   end
