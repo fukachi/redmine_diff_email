@@ -1,25 +1,5 @@
 This plugin sends diff emails for each changeset pushed to a repository.
 
-=== Description ===
-
-This project is a fork of
-[https://github.com/cou2jpn/redmine_diff_email]
-what itself is a fork of
-[https://github.com/kahseng/redmine_diff_email.git]
-(what was originally developed by
-[https://github.com/Lamar/]).
-
-The following modifications were made by cou2jpn:
-
-* E-mail headers added.
-* Multi-language support (send e-mail in the language of the committer).
-* Support for multipart e-mail (with text messages).
-* View diff in mail abolished.
-* Abolished by users in custom field settings. By project (by the repository) Sets whether to send email.
-* Changes to send mail to project members authorized repository browser.
-* Add the option of attaching diff file or not.
-* To see a list of changed files on the commit in the body of the email. (Git, Subversion, Mercurial)
-
 === Installation ===
 
 This plugin is tested and developed with the current Redmine version (2.6).
@@ -61,10 +41,3 @@ users fulfilling all of the following criteria will receive commit notifications
 To check whether you receive notifications for a certain project, check your account settings at the "My account" page
 and make sure that "Email notifications" is set to "all projects" or "selected projects" respectively. 
 
-=== CI ===
-
-<a href="https://travis-ci.org/lpirl/redmine_diff_email" target="_blank">
-  <img src="https://travis-ci.org/lpirl/redmine_diff_email.svg?branch=master" alt="build status" />
-</a><br />
-
-Thanks to [[https://github.com/n-rodriguez|n-rodriguez]] for the setup.
