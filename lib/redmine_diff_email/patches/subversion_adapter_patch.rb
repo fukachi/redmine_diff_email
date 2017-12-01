@@ -15,17 +15,24 @@ module RedmineDiffEmail
 
         def changed_files(path = nil, rev = 'HEAD')
           path ||= ''
-          cmd = "#{self.class.sq_bin} log -v -q -r #{rev} #{target(path)}"
+          cmd = "#{self.class.sq_bin} log --xml -v -q -r #{rev} #{target(path)}"
           cmd << credentials_string
           changed_files = []
           shellout(cmd) do |io|
-            io.each_line do |line|
-              changed_files << line
+            output = io.read.force_encoding('UTF-8')
+            begin
+              doc = parse_xml(output)
+              each_xml_element(doc['log'], 'logentry') do |logentry|
+                paths = []
+                each_xml_element(logentry['paths'], 'path') do |path|
+                  changed_files << path['action'] + " " + path['__content__'] + "\n"
+                end
+              end
+            rescue
             end
           end
           changed_files
         end
-
       end
 
     end
