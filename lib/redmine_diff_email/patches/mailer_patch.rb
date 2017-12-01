@@ -33,7 +33,7 @@ module RedmineDiffEmail
 
           Rails.logger.info "mailing changeset to " + to.to_sentence
 
-          subject = "[#{@project.name}: #{l(:label_repository)}] #{changeset.format_identifier} #{changeset.short_comments}"
+          subject = "[#{@project.name}: #{l(:label_repository)}] \##{changeset.format_identifier} #{@author} #{changeset.short_comments}"
 
           @is_attached = is_attached
           @changeset = changeset
@@ -42,6 +42,8 @@ module RedmineDiffEmail
           diff = @changeset.repository.diff("", @changeset.revision, nil)
 
           @changeset_url = url_for(controller: 'repositories', action: 'revision', rev: @changeset.revision, id: @project, repository_id: changeset.repository)
+#          @commit_date = @changeset.committed_on).in_time_zone(Time.zone)
+          @commit_date = format_time(@changeset.committed_on)
 
           set_language_if_valid @changeset.user.language unless changeset.user.nil?
 
