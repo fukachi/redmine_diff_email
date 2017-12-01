@@ -33,7 +33,7 @@ module RedmineDiffEmail
 
           Rails.logger.info "mailing changeset to " + to.to_sentence
 
-          subject = "[#{@project.name}: #{l(:label_repository)}] \##{changeset.format_identifier} #{@author} #{changeset.short_comments}"
+          subject = "[#{@project.name}: #{l(:label_repository)}] \##{changeset.format_identifier} #{@author_s} #{changeset.short_comments}"
 
           @is_attached = is_attached
           @changeset = changeset

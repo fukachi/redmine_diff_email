@@ -1,7 +1,7 @@
 <p><%= l(:diff_email_body) %></p>
 <ul>
     <li><strong><%= l(:label_project) %></strong>: <%= h(@project.name) %></li>
-    <li><strong><%= l(:field_assigned_to) %></strong>: <%= h(@author_s) %></li>
+    <li><strong><%= l(:field_assigned_to) %></strong>: <%= h(@author) %></li>
     <li><strong><%= l(:label_revision) %></strong>: <%= link_to @changeset.revision, @changeset_url %></li>
     <li><strong><%= l(:label_date) %></strong>: <%= h(@commit_date) %></li>
     <li><strong><%= l(:label_comment) %></strong>: </li>
