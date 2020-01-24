@@ -8,6 +8,6 @@ Redmine::Plugin.register :redmine_diff_email do
   name 'Redmine Diff Email Plugin'
   author 'fukachi (orig. by Kah Seng Tay, Sergey Generalov, Lamar, Ivan Evtuhovich, cou2jpn, Lukas Pirl)'
   description 'This is a plugin for Redmine that sends diff emails on commits.'
-  version '0.3.1'
+  version '0.3.2'
   url 'https://github.com/fukachi/redmine_diff_email'
 end
