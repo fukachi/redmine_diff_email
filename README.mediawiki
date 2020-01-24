@@ -2,9 +2,8 @@ This plugin sends diff emails for each changeset pushed to a repository.
 
 === Installation ===
 
-This plugin is tested and developed with the current Redmine version (2.6).
-Please drop me a note if you find [in]compatibilities with other versions.
-( I confirmed the operation with Redmine version 3.4 )
+I confirmed the operation with Redmine version 4.1.0.  
+I have not checked it, but I think it will work on redmine version 2.6 or later.  
 
 To
 
